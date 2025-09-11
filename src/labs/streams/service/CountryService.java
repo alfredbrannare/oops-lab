@@ -33,4 +33,9 @@ public class CountryService {
                 .collect(Collectors.toList());
     }
 
+    public List<Country> getCountriesSortedByPopulation() {
+        return countries.stream()
+                .sorted(Comparator.comparing(Country::population).reversed())
+                .collect(Collectors.toList());
+    }
 }

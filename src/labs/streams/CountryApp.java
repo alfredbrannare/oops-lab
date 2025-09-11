@@ -10,6 +10,6 @@ public class CountryApp {
 
         countryPrinter.printCountries("First and Last Country", countryService.getFirstAndLastCountry());
         countryPrinter.printCountries("Countries Sorted (A-Z)", countryService.getCountriesSortedAlphabetically());
-
+        countryPrinter.printCountries("Countries Sorted (Population)", countryService.getCountriesSortedByPopulation());
     }
 }

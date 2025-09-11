@@ -4,24 +4,24 @@
 
 **Namn, huvudstad, folkmängd (miljoner), area (km2)**
 
-1. [ ] Sverige, Stockholm, 10.07, 450295
-2. [ ] Norge, Oslo, 5.27, 323802
-3. [ ] Island, Reykjavik, 0.33, 102775
-4. [ ] Danmark, Köpenhamn, 5.75, 42931
-5. [ ] Finland, Helsinki, 5.51, 338424
-6. [ ] Belgien, Bryssel, 11.30, 30528
-7. [ ] Tyskland, Berlin, 82.18, 357168
-8. [ ] Frankrike, Paris, 66.99, 640679
-9. [ ] Storbritannien, London, 60.80, 209331
-10. [ ] Niue, Alofi, 0.0016, 261
-11. [ ] Mongoliet, Ulan Batar, 3.08, 1566000
-12. [ ] Polen, Warszawa, 38.63, 312679
-13. [ ] Spanien, Madrid, 46.5, 505990
-14. [ ] Portugal, Lissabon, 10.31, 92212
-15. [ ] Italien, Rom, 60.59, 301338
-16. [ ] Grekland, Aten, 11.18, 131957
-17. [ ] Luxemburg, Luxemburg, 0.58, 2586
-18. [ ] Liechtenstein, Vaduz, 0.038, 160
+1.  Sverige, Stockholm, 10.07, 450295
+2.  Norge, Oslo, 5.27, 323802
+3.  Island, Reykjavik, 0.33, 102775
+4.  Danmark, Köpenhamn, 5.75, 42931
+5.  Finland, Helsinki, 5.51, 338424
+6.  Belgien, Bryssel, 11.30, 30528
+7.  Tyskland, Berlin, 82.18, 357168
+8.  Frankrike, Paris, 66.99, 640679
+9.  Storbritannien, London, 60.80, 209331
+10.  Niue, Alofi, 0.0016, 261
+11.  Mongoliet, Ulan Batar, 3.08, 1566000
+12.  Polen, Warszawa, 38.63, 312679
+13.  Spanien, Madrid, 46.5, 505990
+14.  Portugal, Lissabon, 10.31, 92212
+15.  Italien, Rom, 60.59, 301338
+16.  Grekland, Aten, 11.18, 131957
+17.  Luxemburg, Luxemburg, 0.58, 2586
+18.  Liechtenstein, Vaduz, 0.038, 160
 
 ---
 
