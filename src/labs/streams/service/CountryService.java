@@ -4,8 +4,9 @@ import labs.streams.entities.Country;
 import labs.streams.entities.CountryList;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CountryService {
     private final List<Country> countries = new ArrayList<>(CountryList.COUNTRIES);
@@ -24,6 +25,12 @@ public class CountryService {
         result.add(lastCountry);
 
         return result;
+    }
+
+    public List<Country> getCountriesSortedAlphabetically() {
+        return countries.stream()
+                .sorted(Comparator.comparing(Country::country))
+                .collect(Collectors.toList());
     }
 
 }
