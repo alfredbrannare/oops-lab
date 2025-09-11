@@ -38,4 +38,10 @@ public class CountryService {
                 .sorted(Comparator.comparing(Country::population).reversed())
                 .collect(Collectors.toList());
     }
+
+    public Country getHighestPopulatedCountry() {
+        return countries.stream()
+                .max(Comparator.comparing(Country::population))
+                .orElseThrow(() -> new IllegalArgumentException("The country list is empty"));
+    }
 }
