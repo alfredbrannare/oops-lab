@@ -1,5 +1,6 @@
 package labs.streams.service;
 
+import jdk.jfr.Category;
 import labs.streams.entities.Country;
 import labs.streams.entities.CountryList;
 
@@ -44,4 +45,18 @@ public class CountryService {
                 .max(Comparator.comparing(Country::population))
                 .orElseThrow(() -> new IllegalArgumentException("The country list is empty"));
     }
+
+    public double getAverageCountryArea() {
+        return countries.stream()
+                .mapToDouble(Country::area)
+                .average()
+                .orElseThrow(() -> new IllegalArgumentException("The country list is empty"));
+    }
+
+    public List<Country> getBelowAverageAreaCountries(){
+        return countries.stream()
+                .filter(c -> c.area() < getAverageCountryArea())
+                .collect(Collectors.toList());
+    }
+
 }

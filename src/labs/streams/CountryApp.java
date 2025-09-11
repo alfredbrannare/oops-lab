@@ -12,5 +12,7 @@ public class CountryApp {
         countryPrinter.printCountries("Countries Sorted (A-Z)", countryService.getCountriesSortedAlphabetically());
         countryPrinter.printCountries("Countries Sorted (Population)", countryService.getCountriesSortedByPopulation());
         countryPrinter.printCountries("Country with Highest Population", countryService.getHighestPopulatedCountry());
+        countryPrinter.printCountries("Average Country Area", countryService.getAverageCountryArea(), countryService.getBelowAverageAreaCountries().size());
+
     }
 }
