@@ -42,6 +42,14 @@ public class CountryPrinter {
         System.out.println();
     }
 
+    public void printCountryAndArea(String title, List<Country> countries) {
+        System.out.println(title);
+        for (Country country : countries) {
+            System.out.println(country.country() + " | " + country.area());
+        }
+        System.out.println();
+    }
+
     public void printAreaCounts(String title1, int count1, String title2, int count2, String title3, int count3) {
         System.out.println(title1 + ": " + count1);
         System.out.println(title2 + ": " + count2);

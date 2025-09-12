@@ -46,6 +46,8 @@ public class CountryApp {
         kommer Norge inte med för det har bara 5 miljoner, men Sverige har 10 miljoner så det kommer med. */
         countryPrinter.printCountryAndPopulation("3 first countries with least population over 7m", countryService.get3FirstWithLeastPopulationAbove7M());
 
+        // 13. Skriv ut namnen på upp till tre länder som har en area på minst 500 000 km2, sorterade fallande efter namn.
+        countryPrinter.printCountryAndArea("Up to 3 countries with an area of at least 500 000 km2", countryService.getUpTo3CountriesWithAreaAbove500K());
 
 
     }

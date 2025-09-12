@@ -1,6 +1,5 @@
 package labs.streams.service;
 
-import jdk.jfr.Category;
 import labs.streams.entities.Country;
 import labs.streams.entities.CountryList;
 
@@ -109,4 +108,15 @@ public class CountryService {
                 .limit(3)
                 .collect(Collectors.toList());
     }
+
+    public List<Country> getUpTo3CountriesWithAreaAbove500K() {
+        return countries.stream()
+                .filter(c -> c.area() > 5_00_000)
+                .sorted(Comparator.comparing(Country::country).reversed())
+                .limit(3)
+                .collect(Collectors.toList());
+    }
+
+
+
 }
