@@ -14,12 +14,14 @@ public class CountryApp {
         countryPrinter.printCountries("Country with Highest Population", countryService.getHighestPopulatedCountry());
         countryPrinter.printCountries("Average Country Area", countryService.getAverageCountryArea(), countryService.getBelowAverageAreaCountries().size());
         countryPrinter.printCountries("Countries with Population Below 5(M)", countryService.getCountriesBelow5Mil());
-        countryPrinter.printCountries(
+
+        countryPrinter.printAreaCounts(
                 "Countries with Area Above 10K", countryService.getCountriesWithAreaAbove10K().size(),
                 "Countries with Area Above 100K", countryService.getCountriesWithAreaAbove100K().size(),
                 "Countries with Area Above 1M", countryService.getCountriesWithAreaAbove1M().size());
-        countryPrinter.printCountries("Country Name and Captial Name Stars with the Same Letter", countryService.getCountriesWithSameInitialAsCapital());
-        countryPrinter.printCountries("Countries where the country's name is longer than it's capital's name", countryService.getCountryNameLongerThanCapitalName());
+
+        countryPrinter.printCountryNames("Country Name and Capital Name Start with Same Letter", countryService.getCountriesWithSameInitialAsCapital());
+        countryPrinter.printCountryNames("Countries where country name is longer than capital name", countryService.getCountryNameLongerThanCapitalName());
 
     }
 }
