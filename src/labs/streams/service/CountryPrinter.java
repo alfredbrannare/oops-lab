@@ -1,61 +1,40 @@
 package labs.streams.service;
 
 import labs.streams.entities.Country;
-
 import java.util.List;
 
-
 public class CountryPrinter {
-    // Helper Methods
-    private static void dynamicHeader(String title, String format, List<String> headers) {
-        System.out.println("==============================================================================================");
-        System.out.println("-- " + title + " --");
-        System.out.printf(format, headers.toArray());
+
+    public void printCountries(String title, int population) {
+        System.out.println(title);
+        System.out.println("Highest Population: " + population);
         System.out.println();
-        System.out.println("-----------------------------------------------------------------------------------------------");
-
-    }
-
-    private static void footer() {
-        System.out.println("==============================================================================================");
-        System.out.println(); // prints a blank line
     }
 
     public void printCountries(String title, double area) {
-        dynamicHeader(title, "%-15s %-10s", List.of("Country", "Area"));
-        System.out.println(String.format("%-15s %-10s",
-                "Average Area",
-                area
-                ));
-        footer();
+        System.out.println(title);
+        System.out.println("Average Area: " + area);
+        System.out.println();
     }
 
     public void printCountries(String title, Country country) {
-        dynamicHeader(title, "%-15s %-10s", List.of("Country", "Population"));
-        System.out.println(String.format("%-15s %-10s",
-                country.country(),
-                country.area()));
-        footer();
+        System.out.println(title);
+        System.out.println(country.country() + " - Area: " + country.area());
+        System.out.println();
     }
 
     public void printCountries(String title, List<Country> countries) {
-        dynamicHeader(title, "%-15s %-15s %-12s %-10s", List.of("Country", "Capital", "Population", "Area"));
-        countries.stream()
-                .map(c -> String.format("%-15s %-15s %-12s %-10s",
-                        c.country(),
-                        c.capital(),
-                        c.population(),
-                        c.area()))
-                .forEach(System.out::println);
-        footer();
+        System.out.println(title);
+        for (Country country : countries) {
+            System.out.println(country.country() + " | " + country.capital() +
+                    " | Pop: " + country.population() + " | Area: " + country.area());
+        }
+        System.out.println();
     }
 
     public void printCountries(String title, double averageArea, int belowAverage) {
-        dynamicHeader(title, "%-30s %-10s",
-                List.of("Average Country Area", "Countries Below Avg"));
-
-        System.out.println(String.format("%-30.2f %-10d", averageArea, belowAverage));
-
-        footer();
+        System.out.println(title);
+        System.out.println("Average Area: " + averageArea + " | Countries Below Average: " + belowAverage);
+        System.out.println();
     }
 }
