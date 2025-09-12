@@ -80,4 +80,12 @@ public class CountryPrinter {
 
         System.out.println();
     }
+
+    public void printCountryAndActualPopulation(String test, Map<String, Long> actualCountryPopulationValue) {
+    System.out.println(test);
+    actualCountryPopulationValue.forEach((country, population) -> {
+        System.out.println(country + " | " + population);
+            }
+    );
+    }
 }

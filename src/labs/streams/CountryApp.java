@@ -64,5 +64,9 @@ public class CountryApp {
         osv. */
         countryPrinter.printCountryAndPopulation("Test", countryService.getCountriesWithXPopulation());
 
+        /* 16a Skriv ut namnet och befolkningsmängden för alla länder, men räkna om befolkningsmängden
+        till faktiska tal. Alltså ska till exempel 1.5 miljoner skrivas ut som 1500000. */
+        countryPrinter.printCountryAndActualPopulation("Test", countryService.getActualCountryPopulationValue());
+
     }
 }

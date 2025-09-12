@@ -3,6 +3,7 @@ package labs.streams.service;
 import labs.streams.entities.Country;
 import labs.streams.entities.CountryList;
 
+import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -138,4 +139,9 @@ public class CountryService {
                 ));
     }
 
+
+    public Map<String, Long> getActualCountryPopulationValue() {
+        return countries.stream()
+                .collect(Collectors.toMap(Country::country, c -> (long) (c.population() * 1_000_000)));
+    }
 }
