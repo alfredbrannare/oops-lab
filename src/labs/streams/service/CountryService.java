@@ -96,10 +96,17 @@ public class CountryService {
     }
 
     public List<Country> get5FirstWithLeastPopulation() {
-        List<Country> leatsPopulation = new ArrayList<>();
         return countries.stream()
                 .sorted(Comparator.comparing(Country::population))
                 .limit(5)
+                .collect(Collectors.toList());
+    }
+
+    public List<Country> get3FirstWithLeastPopulationAbove7M() {
+        return countries.stream()
+                .filter(c -> c.population() > 7.0)
+                .sorted(Comparator.comparing(Country::population))
+                .limit(3)
                 .collect(Collectors.toList());
     }
 }

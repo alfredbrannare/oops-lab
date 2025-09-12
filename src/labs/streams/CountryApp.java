@@ -41,5 +41,12 @@ public class CountryApp {
 
         // 11 Skriv ut de fem första länderna som har minst folkmängd.
         countryPrinter.printCountryAndPopulation("5 first countries with least population", countryService.get5FirstWithLeastPopulation());
+
+        /* 12 Skriv ut de tre första länderna som har minst folkmängd och över 7 miljoner. Exempelvis
+        kommer Norge inte med för det har bara 5 miljoner, men Sverige har 10 miljoner så det kommer med. */
+        countryPrinter.printCountryAndPopulation("3 first countries with least population over 7m", countryService.get3FirstWithLeastPopulationAbove7M());
+
+
+
     }
 }
