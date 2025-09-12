@@ -49,6 +49,9 @@ public class CountryApp {
         // 13. Skriv ut namnen på upp till tre länder som har en area på minst 500 000 km2, sorterade fallande efter namn.
         countryPrinter.printCountryAndArea("Up to 3 countries with an area of at least 500 000 km2", countryService.getUpTo3CountriesWithAreaAbove500K());
 
+        /* 14. Skriv ut hur många länder det finns som börjar på varje bokstav som finns i listan. Exempelvis
+        så finns det tre länder vars namn börjar på S, ett som börjar på D och två som börjar på F. */
+        countryPrinter.printCountryAndArea("Print how many countries start with each initial letter", countryService.getCountryInitialsMap());
 
     }
 }

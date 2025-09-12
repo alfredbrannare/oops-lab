@@ -3,9 +3,11 @@ package labs.streams.service;
 import labs.streams.entities.Country;
 import labs.streams.entities.CountryList;
 
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class CountryService {
@@ -118,5 +120,11 @@ public class CountryService {
     }
 
 
-
+    public Map<Character, Integer> getCountryInitialsMap() {
+        return countries.stream()
+                .map(Country::country)
+                .filter(name -> !name.isEmpty())
+                .map(name -> name.charAt(0))
+                .collect(Collectors.toMap(name -> name, name -> 1, Integer::sum));
+    }
 }

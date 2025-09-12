@@ -2,6 +2,7 @@ package labs.streams.service;
 
 import labs.streams.entities.Country;
 import java.util.List;
+import java.util.Map;
 
 public class CountryPrinter {
 
@@ -55,5 +56,12 @@ public class CountryPrinter {
         System.out.println(title2 + ": " + count2);
         System.out.println(title3 + ": " + count3);
         System.out.println();
+    }
+
+    public void printCountryAndArea(String title, Map<Character, Integer> countryInitialsMap) {
+    System.out.println(title);
+    countryInitialsMap
+            .forEach((initial, count) -> System.out.println(initial + ": " + count));
+    System.out.println();
     }
 }
