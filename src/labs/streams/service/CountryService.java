@@ -4,10 +4,7 @@ import labs.streams.entities.Country;
 import labs.streams.entities.CountryList;
 
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CountryService {
@@ -54,7 +51,7 @@ public class CountryService {
                 .orElseThrow(() -> new IllegalArgumentException("The country list is empty"));
     }
 
-    public List<Country> getBelowAverageAreaCountries(){
+    public List<Country> getBelowAverageAreaCountries() {
         return countries.stream()
                 .filter(c -> c.area() < getAverageCountryArea())
                 .collect(Collectors.toList());
@@ -127,4 +124,18 @@ public class CountryService {
                 .map(name -> name.charAt(0))
                 .collect(Collectors.toMap(name -> name, name -> 1, Integer::sum));
     }
+
+    public Map<Integer, List<Country>> getCountriesWithXPopulation() {
+        return countries.stream()
+                .collect(Collectors.groupingBy(
+                        c -> (int) Math.floor(c.population()),
+                        Collectors.collectingAndThen(
+                                Collectors.toList(),
+                                list -> list.stream()
+                                        .sorted(Comparator.comparing(Country::country))
+                                        .collect(Collectors.toList())
+                        )
+                ));
+    }
+
 }

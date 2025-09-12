@@ -51,7 +51,18 @@ public class CountryApp {
 
         /* 14. Skriv ut hur många länder det finns som börjar på varje bokstav som finns i listan. Exempelvis
         så finns det tre länder vars namn börjar på S, ett som börjar på D och två som börjar på F. */
-        countryPrinter.printCountryAndArea("Print how many countries start with each initial letter", countryService.getCountryInitialsMap());
+        countryPrinter.printCountryAndArea("Countries sharing initial letter", countryService.getCountryInitialsMap());
+
+        /* 15 Skriv ut hur många länder det finns som har en befolkning på X miljoner och deras namn.
+        Sortera dem i bokstavsordning på namnet. Befolkningsmängden ska avrundas nedåt till ett heltal.
+        Utskriften ska se ut ungefär så här:
+        Länder med 0 miljoner invånare:
+        - Island
+        - Niue
+        Länder med 3 miljoner invånare:
+        - Mongoliet
+        osv. */
+        countryPrinter.printCountryAndPopulation("Test", countryService.getCountriesWithXPopulation());
 
     }
 }

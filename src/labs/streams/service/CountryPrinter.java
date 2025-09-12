@@ -1,6 +1,7 @@
 package labs.streams.service;
 
 import labs.streams.entities.Country;
+
 import java.util.List;
 import java.util.Map;
 
@@ -59,9 +60,24 @@ public class CountryPrinter {
     }
 
     public void printCountryAndArea(String title, Map<Character, Integer> countryInitialsMap) {
-    System.out.println(title);
-    countryInitialsMap
-            .forEach((initial, count) -> System.out.println(initial + ": " + count));
-    System.out.println();
+        System.out.println(title);
+        countryInitialsMap
+                .forEach((initial, count) -> System.out.println(initial + ": " + count));
+        System.out.println();
+    }
+
+    public void printCountryAndPopulation(String title, Map<Integer, List<Country>> countriesWithXPopulation) {
+        System.out.println(title);
+
+        countriesWithXPopulation.keySet().stream()
+                .sorted()
+                .forEach(population -> {
+                    System.out.println("Countries with " + population + " million inhabitants");
+                    countriesWithXPopulation.get(population).forEach(country ->
+                            System.out.println("- " + country.country())
+                    );
+                });
+
+        System.out.println();
     }
 }
