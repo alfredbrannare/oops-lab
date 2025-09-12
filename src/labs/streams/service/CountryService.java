@@ -88,4 +88,10 @@ public class CountryService {
                 .filter(c -> c.capital().charAt(0) == c.country().charAt(0))
                 .collect(Collectors.toList());
     }
+
+    public List<Country> getCountryNameLongerThanCapitalName() {
+        return countries.stream()
+                .filter(c -> c.country().length() > c.capital().length())
+                .collect(Collectors.toList());
+    }
 }

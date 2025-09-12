@@ -19,7 +19,7 @@ public class CountryApp {
                 "Countries with Area Above 100K", countryService.getCountriesWithAreaAbove100K().size(),
                 "Countries with Area Above 1M", countryService.getCountriesWithAreaAbove1M().size());
         countryPrinter.printCountries("Country Name and Captial Name Stars with the Same Letter", countryService.getCountriesWithSameInitialAsCapital());
-
+        countryPrinter.printCountries("Countries where the country's name is longer than it's capital's name", countryService.getCountryNameLongerThanCapitalName());
 
     }
 }
