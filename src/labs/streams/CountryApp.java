@@ -14,6 +14,10 @@ public class CountryApp {
         countryPrinter.printCountries("Country with Highest Population", countryService.getHighestPopulatedCountry());
         countryPrinter.printCountries("Average Country Area", countryService.getAverageCountryArea(), countryService.getBelowAverageAreaCountries().size());
         countryPrinter.printCountries("Countries with Population Below 5(M)", countryService.getCountriesBelow5Mil());
+        countryPrinter.printCountries(
+                "Countries with Area Above 10K", countryService.getCountriesWithAreaAbove10K().size(),
+                "Countries with Area Above 100K", countryService.getCountriesWithAreaAbove100K().size(),
+                "Countries with Area Above 1M", countryService.getCountriesWithAreaAbove1M().size());
 
     }
 }

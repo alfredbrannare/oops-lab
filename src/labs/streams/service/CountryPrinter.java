@@ -37,4 +37,15 @@ public class CountryPrinter {
         System.out.println("Average Area: " + averageArea + " | Countries Below Average: " + belowAverage);
         System.out.println();
     }
+
+    public void printCountries(String title1, int size, String title2, int size1, String title3, int size2) {
+        System.out.println(title1);
+        System.out.println("Size: " + size);
+        System.out.println();
+        System.out.println(title2);
+        System.out.println("Size: " + size1);
+        System.out.println();
+        System.out.println(title3);
+        System.out.println("Size: " + size2);
+    }
 }

@@ -64,4 +64,22 @@ public class CountryService {
                 .filter(c -> c.population() < 5.0)
                 .collect(Collectors.toList());
     }
+
+    public List<Country> getCountriesWithAreaAbove10K() {
+        return countries.stream()
+                .filter(c -> c.area() > 10_000)
+                .collect(Collectors.toList());
+    }
+
+    public List<Country> getCountriesWithAreaAbove100K() {
+        return countries.stream()
+                .filter(c -> c.area() > 100_000)
+                .collect(Collectors.toList());
+    }
+
+    public List<Country> getCountriesWithAreaAbove1M() {
+        return countries.stream()
+                .filter(c -> c.area() > 1000_000)
+                .collect(Collectors.toList());
+    }
 }
