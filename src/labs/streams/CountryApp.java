@@ -22,6 +22,7 @@ public class CountryApp {
 
         countryPrinter.printCountryNames("Country Name and Capital Name Start with Same Letter", countryService.getCountriesWithSameInitialAsCapital());
         countryPrinter.printCountryNames("Countries where country name is longer than capital name", countryService.getCountryNameLongerThanCapitalName());
+        countryPrinter.printCountryAndPopulation("5 first countries with least population", countryService.get5FirstWithLeastPopulation());
 
     }
 }
