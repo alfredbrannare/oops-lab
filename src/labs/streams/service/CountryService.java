@@ -59,4 +59,9 @@ public class CountryService {
                 .collect(Collectors.toList());
     }
 
+    public List<Country> getCountriesBelow5Mil() {
+        return countries.stream()
+                .filter(c -> c.population() < 5.0)
+                .collect(Collectors.toList());
+    }
 }
