@@ -82,4 +82,10 @@ public class CountryService {
                 .filter(c -> c.area() > 1000_000)
                 .collect(Collectors.toList());
     }
+
+    public List<Country> getCountriesWithSameInitialAsCapital() {
+        return countries.stream()
+                .filter(c -> c.capital().charAt(0) == c.country().charAt(0))
+                .collect(Collectors.toList());
+    }
 }

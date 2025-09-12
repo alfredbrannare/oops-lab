@@ -18,6 +18,8 @@ public class CountryApp {
                 "Countries with Area Above 10K", countryService.getCountriesWithAreaAbove10K().size(),
                 "Countries with Area Above 100K", countryService.getCountriesWithAreaAbove100K().size(),
                 "Countries with Area Above 1M", countryService.getCountriesWithAreaAbove1M().size());
+        countryPrinter.printCountries("Country Name and Captial Name Stars with the Same Letter", countryService.getCountriesWithSameInitialAsCapital());
+
 
     }
 }

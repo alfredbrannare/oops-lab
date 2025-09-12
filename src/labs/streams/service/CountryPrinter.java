@@ -47,5 +47,6 @@ public class CountryPrinter {
         System.out.println();
         System.out.println(title3);
         System.out.println("Size: " + size2);
+        System.out.println();
     }
 }
