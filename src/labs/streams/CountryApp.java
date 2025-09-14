@@ -78,7 +78,7 @@ public class CountryApp {
 
         /* 18. Skriv ut hur stor befolkning de 6 minsta länderna har tillsammans. Skriv också ut hur stor
         befolkning de 3 största länderna har tillsammans. */
-        countryPrinter.print6SmallestAnd3LargestCountryPopulationBasedOnArea("Population of 6 smallest and 3 biggest countries", countryService.getCombinedPopulationOf6SmallestAnd3LargestCountries());
+        countryPrinter.print6SmallestAnd3LargestCountryPopulationBasedOnArea("Combined population of 6 smallest and 3 biggest countries", countryService.getCombinedPopulationOf6SmallestAnd3LargestCountries());
 
     }
 }

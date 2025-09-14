@@ -99,21 +99,19 @@ public class CountryPrinter {
     }
 
     public void printReversedCapitalNamesInOrder(String title, Map<String, Country> countriesByReversedCapitalName) {
-    System.out.println("Countries sorted by capital name in reverse order:");
+    System.out.println(title);
     countriesByReversedCapitalName.keySet()
             .stream()
             .forEach(System.out::println);
     }
 
-    public void print6SmallestAnd3LargestCountryPopulationBasedOnArea(String title, Map<String, List<Country>> combinedPopulationOf6SmallestAnd3LargestCountries) {
+    public void print6SmallestAnd3LargestCountryPopulationBasedOnArea(String title, Map<String, Double> combinedPopulationOf6SmallestAnd3LargestCountries) {
         System.out.println(title);
         combinedPopulationOf6SmallestAnd3LargestCountries.keySet()
                 .stream()
                 .forEach(population -> {
                     System.out.println(population);
-                    combinedPopulationOf6SmallestAnd3LargestCountries.get(population).forEach(country ->
-                            System.out.println("- " + country.country())
-                    );
+                    System.out.println(combinedPopulationOf6SmallestAnd3LargestCountries.get(population));
                     System.out.println();
                 });
     }

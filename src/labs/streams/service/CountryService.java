@@ -163,7 +163,7 @@ public class CountryService {
                 ));
     }
 
-    public Map<String, List<Country>> getCombinedPopulationOf6SmallestAnd3LargestCountries() {
+    public Map<String, Double> getCombinedPopulationOf6SmallestAnd3LargestCountries() {
         return countries.stream()
                 .sorted(Comparator.comparing(Country::area))
                 .collect(Collectors.teeing(
@@ -172,14 +172,16 @@ public class CountryService {
                                 (List<Country> list) -> list
                                         .stream()
                                         .limit(6)
-                                        .toList()
+                                        .mapToDouble(Country::population)
+                                        .sum()
                         ),
                         Collectors.collectingAndThen(
                                 Collectors.toList(),
                                 (List<Country> list) -> list
                                         .stream()
                                         .skip(Math.max(0, list.size() - 3))
-                                        .toList()
+                                        .mapToDouble(Country::population)
+                                        .sum()
                         ),
                         (firstSix, lastThree) -> Map.of(
                                 "6 Smallest", firstSix,
