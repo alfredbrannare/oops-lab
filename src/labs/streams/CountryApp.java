@@ -53,7 +53,7 @@ public class CountryApp {
         så finns det tre länder vars namn börjar på S, ett som börjar på D och två som börjar på F. */
         countryPrinter.printCountryAndArea("Countries sharing initial letter", countryService.getCountryInitialsMap());
 
-        /* 15 Skriv ut hur många länder det finns som har en befolkning på X miljoner och deras namn.
+        /* 15. Skriv ut hur många länder det finns som har en befolkning på X miljoner och deras namn.
         Sortera dem i bokstavsordning på namnet. Befolkningsmängden ska avrundas nedåt till ett heltal.
         Utskriften ska se ut ungefär så här:
         Länder med 0 miljoner invånare:
@@ -64,13 +64,17 @@ public class CountryApp {
         osv. */
         countryPrinter.printCountryAndPopulation("Test", countryService.getCountriesWithXPopulation());
 
-        /* 16a Skriv ut namnet och befolkningsmängden för alla länder, men räkna om befolkningsmängden
+        /* 16a. Skriv ut namnet och befolkningsmängden för alla länder, men räkna om befolkningsmängden
         till faktiska tal. Alltså ska till exempel 1.5 miljoner skrivas ut som 1500000. */
         countryPrinter.printCountryAndActualPopulation("Countries with actual population value", countryService.getActualCountryPopulationValue());
 
-        /*16b Skriv ut namnet på alla länder och hur trångbodda de är. Trångboddheten räknar du ut genom
-        att ta befolkningsmängden delat med arean. Räkna om befolkningsmängden till faktiska tal som i*/
+        /* 16b. Skriv ut namnet på alla länder och hur trångbodda de är. Trångboddheten räknar du ut genom
+        att ta befolkningsmängden delat med arean. Räkna om befolkningsmängden till faktiska tal som i */
         countryPrinter.printCountryOvercrowdedness("Overcrowdedness per country", countryService.getOvercrowdingByCountry());
+
+        /* 17 Skriv ut namnet på alla länder, sorterat fallande efter deras huvudstäders namn baklänges. Till
+        exempel kommer Tyskland före Niue, eftersom Alofi → ifola kommer före Berlin → nilreB. */
+        countryPrinter.printReversedCapitalNamesInOrder("Reversed Capitals in order", countryService.getCountriesByReversedCapitalName());
 
     }
 }

@@ -152,4 +152,14 @@ public class CountryService {
                                 c -> (
                                         (Math.round((c.population() * 1_000_000) / c.area()) * 100.0) / 100.0)));
     }
+
+    public Map<String, Country> getCountriesByReversedCapitalName() {
+        return countries.stream()
+                .sorted(Comparator.comparing(
+                        c -> new StringBuilder(c.capital()).reverse().toString()))
+                .collect(Collectors.toMap(c -> new StringBuilder(c.capital()).reverse().toString(), c -> c,
+                        (a, b) -> a,
+                        LinkedHashMap::new
+                ));
+    }
 }

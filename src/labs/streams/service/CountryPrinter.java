@@ -97,4 +97,11 @@ public class CountryPrinter {
         });
         System.out.println();
     }
+
+    public void printReversedCapitalNamesInOrder(String title, Map<String, Country> countriesByReversedCapitalName) {
+    System.out.println("Countries sorted by capital name in reverse order:");
+    countriesByReversedCapitalName.keySet()
+            .stream()
+            .forEach(System.out::println);
+    }
 }
