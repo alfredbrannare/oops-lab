@@ -162,4 +162,30 @@ public class CountryService {
                         LinkedHashMap::new
                 ));
     }
+
+    public Map<String, List<Country>> getCombinedPopulationOf6SmallestAnd3LargestCountries() {
+        return countries.stream()
+                .sorted(Comparator.comparing(Country::area))
+                .collect(Collectors.teeing(
+                        Collectors.collectingAndThen(
+                                Collectors.toList(),
+                                (List<Country> list) -> list
+                                        .stream()
+                                        .limit(6)
+                                        .toList()
+                        ),
+                        Collectors.collectingAndThen(
+                                Collectors.toList(),
+                                (List<Country> list) -> list
+                                        .stream()
+                                        .skip(Math.max(0, list.size() - 3))
+                                        .toList()
+                        ),
+                        (firstSix, lastThree) -> Map.of(
+                                "6 Smallest", firstSix,
+                                "3 Largest", lastThree
+                        )
+                ));
+
+    }
 }

@@ -72,9 +72,13 @@ public class CountryApp {
         att ta befolkningsmängden delat med arean. Räkna om befolkningsmängden till faktiska tal som i */
         countryPrinter.printCountryOvercrowdedness("Overcrowdedness per country", countryService.getOvercrowdingByCountry());
 
-        /* 17 Skriv ut namnet på alla länder, sorterat fallande efter deras huvudstäders namn baklänges. Till
+        /* 17. Skriv ut namnet på alla länder, sorterat fallande efter deras huvudstäders namn baklänges. Till
         exempel kommer Tyskland före Niue, eftersom Alofi → ifola kommer före Berlin → nilreB. */
         countryPrinter.printReversedCapitalNamesInOrder("Reversed Capitals in order", countryService.getCountriesByReversedCapitalName());
+
+        /* 18. Skriv ut hur stor befolkning de 6 minsta länderna har tillsammans. Skriv också ut hur stor
+        befolkning de 3 största länderna har tillsammans. */
+        countryPrinter.print6SmallestAnd3LargestCountryPopulationBasedOnArea("Population of 6 smallest and 3 biggest countries", countryService.getCombinedPopulationOf6SmallestAnd3LargestCountries());
 
     }
 }
