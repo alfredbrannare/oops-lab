@@ -87,5 +87,14 @@ public class CountryPrinter {
         System.out.println(country + " | " + population);
             }
     );
+        System.out.println();
+    }
+
+    public void printCountryOvercrowdedness(String title, Map<String, Double> overcrowdingByCountry) {
+        System.out.println(title);
+        overcrowdingByCountry.forEach((country, overcrowding) -> {
+            System.out.println(country + " | " + overcrowding + " people/km²");
+        });
+        System.out.println();
     }
 }

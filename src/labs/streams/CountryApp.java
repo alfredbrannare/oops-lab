@@ -68,5 +68,9 @@ public class CountryApp {
         till faktiska tal. Alltså ska till exempel 1.5 miljoner skrivas ut som 1500000. */
         countryPrinter.printCountryAndActualPopulation("Test", countryService.getActualCountryPopulationValue());
 
+        /*16b Skriv ut namnet på alla länder och hur trångbodda de är. Trångboddheten räknar du ut genom
+        att ta befolkningsmängden delat med arean. Räkna om befolkningsmängden till faktiska tal som i*/
+        countryPrinter.printCountryOvercrowdedness("Overcrowdedness per country", countryService.getOvercrowdingByCountry());
+
     }
 }

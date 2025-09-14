@@ -144,4 +144,12 @@ public class CountryService {
         return countries.stream()
                 .collect(Collectors.toMap(Country::country, c -> (long) (c.population() * 1_000_000)));
     }
+
+    public Map<String, Double> getOvercrowdingByCountry() {
+        return countries.stream()
+                .collect(Collectors
+                        .toMap(Country::country,
+                                c -> (
+                                        (Math.round((c.population() * 1_000_000) / c.area()) * 100.0) / 100.0)));
+    }
 }
