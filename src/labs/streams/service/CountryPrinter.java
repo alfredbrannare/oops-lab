@@ -115,4 +115,12 @@ public class CountryPrinter {
                     System.out.println();
                 });
     }
+
+    public void printTotalPopulationForSevenLetterCountries(String title, Map<String, Double> totalPopulationForSevenLetterCountries) {
+        System.out.println(title);
+        totalPopulationForSevenLetterCountries.keySet()
+                .stream()
+                .forEach(countries -> System.out.println(countries + ": " + totalPopulationForSevenLetterCountries.get(countries))
+                );
+    }
 }

@@ -190,4 +190,15 @@ public class CountryService {
                 ));
 
     }
+
+    public Map<String, Double> getTotalPopulationForSevenLetterCountries() {
+        return countries.stream()
+                .filter(c -> c.country().length() == 7)
+                .collect(Collectors.teeing(
+                        Collectors.mapping(Country::country,
+                                Collectors.joining(", ")),
+                        Collectors.summingDouble(Country::population),
+                        (countryNames, totalPopulation) -> Map.of(countryNames, totalPopulation)
+                ));
+    }
 }

@@ -80,5 +80,8 @@ public class CountryApp {
         befolkning de 3 största länderna har tillsammans. */
         countryPrinter.print6SmallestAnd3LargestCountryPopulationBasedOnArea("Combined population of 6 smallest and 3 biggest countries", countryService.getCombinedPopulationOf6SmallestAnd3LargestCountries());
 
+        // 19. Skriv ut hur stor befolkning alla länder vars namn är 7 tecken långt har tillsammans.
+        countryPrinter.printTotalPopulationForSevenLetterCountries("Total Population of 7 letter countries", countryService.getTotalPopulationForSevenLetterCountries());
+
     }
 }
